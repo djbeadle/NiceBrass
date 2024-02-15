@@ -195,7 +195,7 @@
       column-gap: 20px;
       row-gap: 8px;
       grid-template-columns: 1fr 1fr 1fr;
-      grid-template-areas: "zero_line zero_line zero_line" "one one one" "one_line one_line one_line" "three two four" "two_line three_line four_line" "five five five"
+      grid-template-areas: "one one one" "one_line one_line one_line" "three two four"
     }
 
     .quote-container {
@@ -250,7 +250,7 @@
     .dividing-line {
       width: 100%;
       border-top: 1px solid #fefce8;
-      margin: 0 auto;
+      margin: 12px auto 8px;;
     }
 
     .centered-image {
@@ -261,7 +261,16 @@
       margin-top: 24px;
     }
 
+    @media only screen and (min-width: 600px) {
+      .small-screen-only {
+        display: none;
+      }
+    }
+
     @media only screen and (max-width: 600px) {
+      .small-screen-only {
+        display: block;
+      }
       .quote {
         font-size: 22px;
       }
@@ -283,6 +292,10 @@
         overflow: clip;
       }
 
+      #footer-wordmark.background-section {
+        margin-top: -24px;
+      }
+
       #footer img {
         padding: 0; margin: 0; width: 100%; display: block;
         border-radius: 0;
@@ -296,7 +309,7 @@
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: unset;
-        grid-template-areas: "zero_line" "one" "one_line" "two" "two_line" "three" "three_line" "four" "four_line" "five";
+        grid-template-areas: "zero_line" "one" "one_line" "two" "two_line" "three" "three_line" "four";
       }
       
       img {
@@ -355,11 +368,10 @@
 
   </div>
 
-    <div class="background-section" style="margin-top: 0;">
+    <div class="background-section" style="padding-top: 48px;">
       <div class="centered">
-        <h2 style="margin-bottom: 0px;">REVIEWS</h2>
         <div class="quotes">
-          <div style="grid-area: zero_line"><div class="dividing-line"></div></div>
+          <!-- <div style="grid-area: zero_line"><div class="dividing-line"></div></div> -->
           <div class="quote-container" style="grid-area: one; border-bottom: unset;">
             <p class="quote">
               <span style="font-size: 36px; vertical-align: middle">"</span>A
@@ -392,8 +404,6 @@
             </p>
           </div>
 
-          <div style="grid-area: two_line"><div class="dividing-line"></div></div>
-
           <div class="quote-container" style="grid-area: three;">
             <p class="quote" style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
               "<span style="font-style: initial">😎👉</span>"
@@ -406,8 +416,6 @@
             </p>
           </div>
 
-          <div style="grid-area: three_line"><div class="dividing-line"></div></div>
-
           <div class="quote-container" style="grid-area: four;">
             <p class="quote" style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
               "Obsessed"
@@ -418,7 +426,10 @@
               comedian
             </p>
           </div>
-          <div style="grid-area: four_line"><div class="dividing-line"></div></div>
+          
+          <div style="grid-area: two_line" class="small-screen-only"><div class="dividing-line"></div></div>
+          <div style="grid-area: three_line" class="small-screen-only"><div class="dividing-line"></div></div>
+
           <!-- <div class="quote-container" style="grid-area: five;">
             <p class="quote">
               "I wonder why it's called Nice Brass when it's mostly woodwind instruments"
@@ -447,5 +458,12 @@
 
     <div id="footer" class="centered">
       <img class="centered-image" src="/static/group-bw.jpg">
+    </div>
+
+    <div class="background-section" id="footer-wordmark" style="padding-bottom: 0; clip-path: polygon(0 20px, 100% 0, 100% 100%, 0 100%);">
+      <img
+        src="/Nice wordmark light.svg"
+        style="padding: unset; background-color: unset; max-width: 175px; margin-top: 24px;margin-left: 60%; margin-right: 20px; margin-bottom: 24px"
+      />
     </div>
 </body>

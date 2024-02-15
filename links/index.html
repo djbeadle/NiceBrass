@@ -29,7 +29,6 @@
     <meta name="twitter:image" content="https://nicebrass.com/Nice%20Brass%20logo%20without%20handle.svg">
 
 <style>
-
     /* figtree-300 - latin */
     @font-face {
         font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
@@ -58,6 +57,16 @@
             url('/fonts/figtree-v2-latin-500italic.svg#Figtree') format('svg'); /* Legacy iOS */
     }
   
+    .background-section {
+        margin-top: 16px;
+
+        width: 100%;
+        color: #fefce8;
+        background-color: #1c3d22;
+        clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%);
+        padding-top: 16px;
+    }
+
     p {
         background-color: #fefce8;
         padding: 8px; 
@@ -93,7 +102,8 @@
 
     body {
         background-color: #fefce8;
-        padding: 8px; 
+        padding: 0;
+        margin: 0;
 
         font-style: oblique;
 
@@ -154,8 +164,12 @@
         </p>
 
     </div>
-    <img
-        src="/Nice wordmark.svg"
-        style="max-width: 175px; margin-left: auto; margin-bottom: 24px;"
-    >
+
+    <div class="background-section" style="overflow-x: hidden; margin-top: 24px;">
+        <img
+          src="/Nice wordmark light.svg"
+          style="padding: unset; background-color: unset; max-width: 175px; margin-top: 24px;margin-left: 60%; margin-right: 20px; margin-bottom: 24px"
+        />
+      </div>
+
 </body>
