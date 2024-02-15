@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+
+<head>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1"
+  />
+  <meta charset="UTF-8" />
+  <title>Nice Brass is a Band</title>
+
+  <meta name="theme-color" content="#fefce8" />
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="/favicons/apple-touch-icon.png"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="/favicons/favicon-32x32.png"
+  />
+  <link
+    rel="icon"
+    type="image/png"
+    sizes="16x16"
+    href="/favicons/favicon-16x16.png"
+  />
+  <link
+    rel="mask-icon"
+    href="/favicons/safari-pinned-tab.svg"
+    color="#5bbad5"
+  />
+  <link rel="shortcut icon" href="/favicons/favicon.ico" />
+
+  <link rel="stylesheet" href="/static/lite-yt-embed.css" />
+  <script src="/static/lite-yt-embed.js"></script>
+
+  <script
+    data-goatcounter="https://nicebrass.goatcounter.com/count"
+    async
+    src="//gc.zgo.at/count.js"
+  ></script>
+
+  <!-- Facebook Meta Tags -->
+  <meta property="og:url" content="https://nicebrass.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Nice Brass is a Band" />
+  <meta property="og:description" content="Need a brass band? We can help!" />
+  <meta
+    property="og:image"
+    content="https://nicebrass.com/2022_honk_park.jpeg"
+  />
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="twitter:domain" content="nicebrass.com" />
+  <meta property="twitter:url" content="https://nicebrass.com/" />
+  <meta name="twitter:title" content="Nice Brass is a Band" />
+  <meta name="twitter:description" content="Need a brass band? We can help!" />
+  <meta
+    name="twitter:image"
+    content="https://nicebrass.com/2022_honk_park.jpeg"
+  />
+
+  <style>
+    /* figtree-300 - latin */
+    @font-face {
+      font-display: swap;
+      /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+      font-family: "Figtree";
+      font-style: normal;
+      font-weight: 300;
+      src: url("/fonts/figtree-v5-latin-300.woff2") format("woff2");
+      /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+
+    /* figtree-500 - latin */
+    @font-face {
+      font-display: swap;
+      /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+      font-family: "Figtree";
+      font-style: normal;
+      font-weight: 500;
+      src: url("/fonts/figtree-v5-latin-500.woff2") format("woff2");
+      /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+
+    /* figtree-500italic - latin */
+    @font-face {
+      font-display: swap;
+      /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+      font-family: "Figtree";
+      font-style: italic;
+      font-weight: 500;
+      src: url("/fonts/figtree-v5-latin-500italic.woff2") format("woff2");
+      /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+
+    /* figtree-900 - latin */
+    @font-face {
+      font-display: swap;
+      /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+      font-family: "Figtree";
+      font-style: normal;
+      font-weight: 900;
+      src: url("/fonts/figtree-v5-latin-900.woff2") format("woff2");
+      /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+    }
+
+    p {
+      text-align: center;
+      padding: 0 16px 0 16px;
+      margin-top: 0px;
+
+      font-size: 20px;
+      line-height: 130%;
+
+      font-family: "Figtree", sans-serif;
+      font-weight: 300;
+    }
+
+    img {
+      padding: 8px;
+      background-color: #fefce8;
+      border-radius: 4px;
+    }
+
+    .punchy {
+      font-family: "Figtree", sans-serif;
+      font-style: oblique;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-family: "Figtree", sans-serif;
+    
+      font-size: 50px;
+      font-weight: 500;
+
+      margin-bottom: 12px;
+    }
+
+    body {
+      background-color: #fefce8;
+      margin: 0;
+    }
+
+    .youtube-video {
+      border-radius: 4px;
+      aspect-ratio: 16 / 9;
+      width: 100%;
+    }
+
+    .centered {
+      width: 100%;
+      max-width: 800px;
+      height: 100%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .background-section {
+      margin-top: 16px;
+
+      width: 100%;
+      color: #fefce8;
+      background-color: #1c3d22;
+      /* clip-path: polygon(0 20px, 100% 0, 100% calc(100% - 20px), 0 100%); */
+      clip-path: polygon(0 20px, 100% 0, 100% calc(100% - 20px), 0 100%);
+      padding-bottom: 36px;
+    }
+
+    .gallery {
+      display: grid;
+      width: 100%;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+      padding-bottom: 16px;
+    }
+
+    .gallery img{
+      width: 100%;
+      display: block;
+      padding: 0;
+      border-radius: 2px;
+    }
+
+    .quotes {
+      display: grid;
+      column-gap: 20px;
+      row-gap: 8px;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-areas: "zero_line zero_line zero_line" "one one one" "one_line one_line one_line" "three two four" "two_line three_line four_line" "five five five"
+    }
+
+    .quote-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .quote-grid .quote-container {
+      width: 250px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid #fefce8;
+    }
+
+    .quote {
+      flex-grow: 1;
+      font-size: 26px;
+      font-style: italic;
+      margin-bottom: unset;
+      padding-bottom: unset;
+    }
+
+    .credit {
+      flex-grow: 0;
+      margin-top: 0;
+      padding-top: 8px;
+      font-style: normal;
+      font-size: 16px;
+      max-width: 95vw;
+      text-align: center;
+      align-self: center;
+      margin-block-end: 0;
+    }
+
+    .quote-name {
+      height: 72px;
+      font-size: 20px;
+      font-style: oblique;
+    }
+
+    .charlie-quote-container {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      gap: 32px;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-content: middle;
+      align-items: center;
+    }
+
+    .dividing-line {
+      width: 100%;
+      border-top: 1px solid #fefce8;
+      margin: 0 auto;
+    }
+
+    .centered-image {
+      width: 100%; padding: unset; margin-bottom: 16px;
+    }
+
+    #footer  {
+      margin-top: 24px;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .quote {
+        font-size: 22px;
+      }
+
+      .centered-image{
+        width: 94%; padding: unset; margin-bottom: 16px;
+      }
+
+      .youtube-video {
+        width: 94%;
+      }
+
+      #footer .centered {
+        width: 100vw;
+      }
+      #footer {
+        margin-top: -24px;
+        width: 100%;
+        overflow: clip;
+      }
+
+      #footer img {
+        padding: 0; margin: 0; width: 100%; display: block;
+        border-radius: 0;
+      }
+
+      .dividing-line{
+        max-width: 90%;
+      }
+
+      .quotes {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: unset;
+        grid-template-areas: "zero_line" "one" "one_line" "two" "two_line" "three" "three_line" "four" "four_line" "five";
+      }
+      
+      img {
+        padding: 4px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="centered">
+    <img
+      style="width: 300px; margin-top: 18px; margin-bottom: 18px"
+      src="Nice Brass logo without handle.svg"
+    />
+
+    <p>
+      <span class="punchy">Nice Brass</span> is a brass band based in NYC. They
+      play a variety family-friendly music, from traditional NOLA standards to
+      your favorite pop songs. Available for events, shenanigans, and general
+      tomfoolery.
+    </p>
+    <p style="margin-top: -8px">
+      <span class="punchy"><a href="/links/">Links & Upcoming Shows</a></span>
+    </p>
+
+    <img class="centered-image" src="/2022_honk_park.jpeg">
+
+    <p>
+      For bookings please message
+      <a
+        class="punchy"
+        style="text-transform: unset"
+        target="_blank"
+        href="https://www.instagram.com/nicebrassnyc/"
+        >@NiceBrassNYC</a
+      >
+      on Instagram or email
+      <a
+        class="punchy"
+        style="text-transform: unset"
+        href="mailto:NiceBrassNYC@gmail.com"
+        >NiceBrassNYC@gmail.com</a
+      >. Special requests can be negotiated!
+    </p>
+
+    <iframe
+      class="youtube-video"
+      src="https://www.youtube-nocookie.com/embed/VSsomy99gBQ?si=cnFoWKdVZvtZQ4hR"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+      style="margin-bottom: 24px;"
+    ></iframe>
+
+  </div>
+
+    <div class="background-section" style="margin-top: 0;">
+      <div class="centered">
+        <h2 style="margin-bottom: 0px;">REVIEWS</h2>
+        <div class="quotes">
+          <div style="grid-area: zero_line"><div class="dividing-line"></div></div>
+          <div class="quote-container" style="grid-area: one; border-bottom: unset;">
+            <p class="quote">
+              <span style="font-size: 36px; vertical-align: middle">"</span>A
+              big thank you for gracing us with your vibrant music. It seems
+              like Charlie and the crowd loved every note!
+              <span style="font-style: initial">🎺 🐾 🎃</span> We truly
+              appreciate the joy you all brought to the event!
+              <span style="font-style: initial">💚 🐶 🎶</span
+              ><span style="font-size: 36px; vertical-align: middle">"</span>
+            </p>
+
+            <p class="credit">
+              <span class="quote-name">Joy Dog Food</span><br />
+              Sponsors of the 2023 Tompkins Square Park Dog Costume Parade<br /><i
+                >(Charlie is a dog)</i
+              >
+            </p>
+          </div>
+
+          <div style="grid-area: one_line"><div class="dividing-line"></div></div>
+
+          <div class="quote-container" style="grid-area: two;">
+            <p class="quote">
+              "What a memory. Y'all are the best"
+            </p>
+
+            <p class="credit">
+              <span class="quote-name">Freddi K.</span><br />Recipient of a
+              Nice Brass birthday performance
+            </p>
+          </div>
+
+          <div style="grid-area: two_line"><div class="dividing-line"></div></div>
+
+          <div class="quote-container" style="grid-area: three;">
+            <p class="quote" style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
+              "<span style="font-style: initial">😎👉</span>"
+            </p>
+
+            <p class="credit">
+              <span class="quote-name">Kyle Gordon</span><br />Comedian,
+              actor,<br />
+              DJ Crazy Times
+            </p>
+          </div>
+
+          <div style="grid-area: three_line"><div class="dividing-line"></div></div>
+
+          <div class="quote-container" style="grid-area: four;">
+            <p class="quote" style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
+              "Obsessed"
+            </p>
+
+            <p class="credit">
+              <span class="quote-name">Audrey Trullinger</span><br />Actor,<br>
+              comedian
+            </p>
+          </div>
+          <div style="grid-area: four_line"><div class="dividing-line"></div></div>
+          <!-- <div class="quote-container" style="grid-area: five;">
+            <p class="quote">
+              "I wonder why it's called Nice Brass when it's mostly woodwind instruments"
+            </p>
+
+            <p class="credit">
+              <span class="quote-name">Brandon</span><br />Youtube commenter
+            </p>
+          </div> -->
+        </div>
+      </div>
+
+      <!-- <img
+      src="/Nice wordmark light.svg"
+      style="
+        padding: unset;
+        background-color: unset;
+        max-width: 175px;
+        margin-top: 24px;
+        margin-left: 60%;
+        margin-right: 20px;
+        margin-bottom: 24px;
+      "
+    /> -->
+    </div>
+
+    <div id="footer" class="centered">
+      <img class="centered-image" src="/static/group-bw.jpg">
+    </div>
+</body>
